@@ -31,3 +31,13 @@ var pig = {
 //         console.log('Saved user:', d.productName);
 //     });
 // });
+
+// products.findOne({ productName: 'pig' }, function (err, doc) {
+//     console.log('Found product:', doc.kcal);
+// });
+
+products.find({ kcal: { $lt: 400 } }, function (err, docs) {
+    docs.forEach(function (d) {
+        console.log('Found product:', d.productName);
+    });
+});
